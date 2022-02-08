@@ -2,7 +2,6 @@
   "name": "practicum_yandex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel static/*.pug --open -p 3000",
     "build": "parcel build src/*.pug"

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"parcel src/pages/*.pug\"",
+    "start": "concurrently \"npm run server\" \"npm run build\"",
     "server": " node ./server.js",
     "build": "parcel build src/pages/*.pug"
   },

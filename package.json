@@ -4,10 +4,10 @@
   "description": "",
   "scripts": {
     "start": "parcel static/*.pug --open -p 3000",
-    "build": "parcel build src/*.pug"
+    "build": "parcel dist src/*.pug"
   },
   "keywords": [],
-  "author": "",
+  "author": "AF",
   "license": "ISC",
   "dependencies": {
     "parsel": "^0.3.0"

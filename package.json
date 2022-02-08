@@ -2,14 +2,18 @@
   "name": "practicum_yandex",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "parcel index.hbs",
-    "build": "parcel build index.hbs"
+    "start": "parcel static/*.pug --open",
+    "build": "parcel build src/index.pug -d docs --public-url ./"
   },
-  "author": "AF",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "dependencies": {
+    "parsel": "^0.3.0"
+  },
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "^1.0.9",
-    "parcel": "^2.2.1"
+    "@parcel/transformer-pug": "^2.2.1"
   }
 }

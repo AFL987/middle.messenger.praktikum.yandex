@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel static/*.pug --open -p 3000",
-    "build": "parcel dist static/*.pug"
+    "build": "parcel build static/*.pug"
   },
   "keywords": [],
   "author": "AF",

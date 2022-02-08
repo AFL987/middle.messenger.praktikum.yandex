@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel static/*.pug --open",
-    "build": "parcel build src/index.pug -d docs --public-url ./"
+    "start": "parcel static/*.pug --open -p 3000",
+    "build": "parcel build src/*.pug"
   },
   "keywords": [],
   "author": "",

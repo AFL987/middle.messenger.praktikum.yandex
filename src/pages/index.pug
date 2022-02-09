@@ -3,9 +3,19 @@ extends ../layout/main
 block vars
     - var pageTitle = 'Главная страница'
 
-block content
-    h1 ГЛАВНАЯ
-    include ../components/popUp/popUp.pug
+    include ../components/input/input.pug
+    include ../components/button/button.pug
 
-    a(href='./test.pug') тест
+block content
+    .containerCenter
+        form(method="post" name="form")
+            .title_middle.text_center Вход
+            +input("login", "text", "input_login", "логин")
+            +input("password", "password", "input_password", "пароль")
+            +button("Войти")
+            div.text_center
+                a.link_mini(href='./registration.pug') Создать пользователя?
+
+
+
 

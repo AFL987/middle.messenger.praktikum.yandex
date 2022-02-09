@@ -1,6 +1,10 @@
 // компоненты
 @import '../components/popUp/popUp';
 @import '../components/button/buttom';
+@import '../components/input/input';
+
+// шрифты
+@import 'fonts';
 
 *{
   margin: 0;
@@ -8,7 +12,44 @@
   box-sizing: border-box;
 }
 
-
-h1 {
-  color: blueviolet;
+body {
+  font-family: 'InterMedium';
+  font-size: 15px;
 }
+
+.containerCenter {
+  max-width: 340px;
+  height: fit-content;
+  box-shadow: 0 0 5px gray;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 50px 30px 30px;
+}
+
+// Заголовки
+.title_big{
+  font-size: 40px;
+}
+.title_middle{
+  font-size: 20px;
+}
+
+// Ссылки
+.link_mini{
+  font-size: 11px;
+  color: #3369F3;
+  &:visited{
+    color:#3369F3;
+  }
+}
+
+
+.text_center{
+  text-align: center;
+}
+

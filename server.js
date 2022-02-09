@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
+app.use((err, req, res) => {
+    res.redirect('./500.html');
+});
+
 app.use((req, res) => {
     res.redirect('./404.html');
 })

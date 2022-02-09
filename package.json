@@ -18,5 +18,8 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.2.1",
     "sass": "^1.49.7"
+  },
+  "engines": {
+    "node": ">=16.13.2"
   }
 }

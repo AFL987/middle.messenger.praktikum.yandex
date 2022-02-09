@@ -17,10 +17,14 @@ body {
   font-size: 15px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .containerCenter {
   max-width: 340px;
   height: fit-content;
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px #cccccc;
   border-radius: 12px;
   position: absolute;
   top: 0;

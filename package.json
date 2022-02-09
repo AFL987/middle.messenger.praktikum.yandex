@@ -7,7 +7,8 @@
     "server": " node ./server.js",
     "build": "parcel build src/pages/*.pug",
     "restart": "concurrently \"npm run kill\" \"npm run server\" \"npm run build\"",
-    "kill": "npx kill-port 3000"
+    "kill": "npx kill-port 3000",
+    "parcel": "parcel src/pages/*.pug --open"
   },
   "keywords": [],
   "author": "AF",

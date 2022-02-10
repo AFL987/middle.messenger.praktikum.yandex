@@ -1,3 +1,25 @@
+include ../chat/chat.pug
+
 .chat_page
-    .chat_container 555
-    .profile_container 444
+    .chat_container
+        .chat_list
+            .profile_open_container
+                .profile_open#profile_open Профиль &gt;
+            .chat_search_container
+                input.chat_search(type="text" placeholder="Поиск")
+            +chat("Андрей", "11:44")
+            +chat("Владими", "25:77")
+            +chat("Еще какая-то хрень", "пн")
+        .chat_field
+            .chat_field_header#chat_field_header
+                .chat_field_header_avatar
+                .chat_field_header_title#chat_field_header_title title
+                .chat_field_header_pointers#chat_field_header_pointers
+                    .chat_field_header_point
+                    .chat_field_header_point
+                    .chat_field_header_point
+    .profile_container#profile_container
+        .back_chat_container
+            .back_chat_arrow#back_chat_arrow
+        .profile
+

@@ -1,17 +1,110 @@
 .chat_page {
   height: 100vh;
   position: relative;
-  background-color: beige;
   overflow: hidden;
   .chat_container {
+    position: relative;
     height: 100vh;
+    display: flex;
+    .chat_list{
+      width: 310px;
+      height: 100%;
+      overflow: hidden;
+      border-right: 1px solid #EAEAEA;
+      padding: 21px 10px 0 10px;
+      .profile_open_container {
+        display: flex;
+        justify-content: flex-end;
+        .profile_open {
+          cursor: pointer;
+        }
+      }
+      .chat_search_container {
+        padding: 23px 0 14px;
+        border-bottom: 1px solid #EFEFEF;
+        .chat_search {
+          width: 100%;
+          border: none;
+          border-radius: 5px;
+          outline: none;
+          background-color: #EFEFEF;
+          height: 32px;
+        }
+      }
+    }
+    .chat_field{
+      width: calc(100% - 310px);
+      height: 100%;
+      overflow: hidden;
+      padding: 10px 20px;
+      .chat_field_header {
+        opacity: 0;
+        position: relative;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #EFEFEF;
+        display: none;
+        justify-content: start;
+        align-items: center;
+        .chat_field_header_avatar {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background-color: #EFEFEF;
+        }
+        .chat_field_header_title {
+          width: 203px;
+          padding-left: 10px;
+        }
+        .chat_field_header_pointers {
+          position: absolute;
+          right: 0;
+          width: 34px;
+          height: 34px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          .chat_field_header_point {
+            width: 3px;
+            height: 3px;
+            background-color: #000000;
+            border-radius: 50%;
+            margin: 1.5px;
+          }
+        }
+      }
+    }
   }
   .profile_container {
     height: 100vh;
     width: 100%;
     position: absolute;
     top: 0;
-    left: 80%;
-    background-color: lightblue;
+    left: 100%;
+    transition: left .5s;
+    display: flex;
+    .back_chat_container {
+      width: 64px;
+      height: 100%;
+      background-color: #FBFBFB;
+      border-right: 1px solid #EFEFEF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .back_chat_arrow {
+          width: 28px;
+          height: 28px;
+          background-color: #3369F3;
+          border-radius: 50%;
+          cursor: pointer;
+      }
+    }
+    .profile {
+      width: calc(100% - 64px);
+      height: 100%;
+      background-color: #ffffff;
+    }
   }
 }

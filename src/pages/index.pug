@@ -8,11 +8,12 @@ block vars
 
 block content
     .containerCenter
-        form(method="post" name="form")
-            .title_middle.text_center Вход
-            +input("login", "text", "input_login", "логин")
-            +input("password", "password", "input_password", "пароль")
-            +button("Войти")
+        .title_middle.text_center Вход
+        .form_container
+            form(method="post" name="form")
+                +input("login", "text", "input_text", "Логин")
+                +input("password", "password", "input_password", "Пароль")
+                +button("Войти", "entry")
             div.text_center
                 a.link_mini(href='./registration.pug') Создать пользователя?
 

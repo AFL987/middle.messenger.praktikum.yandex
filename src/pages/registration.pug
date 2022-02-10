@@ -10,8 +10,13 @@ block content
     .containerCenter
         form(method="post" name="form")
             .title_middle.text_center Регистрация
-            +input("login", "text", "input_login", "логин")
-            +input("password", "password", "input_password", "пароль")
-            +button("Создать пользователя")
-            div.text_center
-                a.link_mini(href='./registration.pug') Войти
+            +input("email", "email", "input_email", "Почта")
+            +input("login", "text", "input_text", "Логин")
+            +input("first_name", "text", "input_text", "Имя")
+            +input("second_name", "text", "input_text", "Фамилия")
+            +input("phone", "tel", "input_tel", "Телефон")
+            +input("password", "password", "input_password", "Пароль")
+            +input("password", "password", "input_password", "Пароль (еще раз)")
+            +button("Создать пользователя", "registration")
+        div.text_center
+            a.link_mini(href='./registration.pug') Войти

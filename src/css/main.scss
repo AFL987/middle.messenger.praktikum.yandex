@@ -2,6 +2,7 @@
 @import '../components/popUp/popUp';
 @import '../components/button/buttom';
 @import '../components/input/input';
+@import '../components/chat_page/chat_page';
 
 // шрифты
 @import 'fonts';
@@ -14,7 +15,7 @@
 
 body {
   font-family: 'InterMedium';
-  font-size: 15px;
+  font-size: 15px;;
 }
 
 a {

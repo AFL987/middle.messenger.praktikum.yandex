@@ -2,6 +2,8 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+
+  // ЧАТ
   .chat_container {
     position: relative;
     height: 100vh;
@@ -94,6 +96,8 @@
       }
     }
   }
+
+  // ПРОФИЛЬ
   .profile_container {
     height: 100vh;
     width: 100%;
@@ -117,14 +121,40 @@
           background-color: #3369F3;
           border-radius: 50%;
           cursor: pointer;
+          display: flex;
+          justify-content: center;
       }
     }
     .profile {
       width: calc(100% - 64px);
       height: 100%;
       background-color: #ffffff;
+      padding: 60px 0;
+      .profile_data_container{
+        max-width: 510px;
+        height: 100%;
+        margin: 0 auto;
+        .profile_avatar{
+          margin: 0 auto;
+          width: 130px;
+          height: 130px;
+          border-radius: 50%;
+          display: flex;
+          background-color: #EFEFEF;
+          justify-content: center;
+          img {
+            width: 40px;
+          }
+        }
+        .profile_name {
+          padding-top: 20px;
+          text-align: center;
+        }
+      }
     }
   }
+
+  // ПОП АП
   .veil_container {
     position: absolute;
     height: 100vh;

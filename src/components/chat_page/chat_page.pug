@@ -4,6 +4,8 @@ include ../input/input.pug
 include ../button/button.pug
 
 .chat_page
+
+    <!-- ЧАТ -->
     .chat_container
         .chat_list
             .profile_open_container
@@ -26,10 +28,20 @@ include ../button/button.pug
                 .chat_field_modal#chat_field_modal
                     .chat_field_modal_add_user#chat_field_modal_add_user Добавить пользователя
                     .chat_field_modal_delete_user#chat_field_modal_delete_user Удалить пользователя
+
+    <!-- ПРОФИЛЬ -->
     .profile_container#profile_container
         .back_chat_container
             .back_chat_arrow#back_chat_arrow
+                img(src="./../static/images/arrow_left.svg")
         .profile
+            .profile_data_container
+                .profile_avatar
+                    img(src="./../static/images/default_avatar.svg")
+                .profile_name.title_middle Александр
+
+
+    <!-- ПОП АП -->
     .veil_container#veil_container
         .veil_is_casually_thrown_on_a_chair#veil_is_casually_thrown_on_a_chair
         #modal_add_user

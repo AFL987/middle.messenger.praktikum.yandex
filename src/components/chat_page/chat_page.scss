@@ -32,7 +32,7 @@
         }
       }
     }
-    .chat_field{
+    .chat_field {
       width: calc(100% - 310px);
       height: 100%;
       overflow: hidden;
@@ -74,6 +74,24 @@
           }
         }
       }
+      .chat_field_main_field {
+        position: relative;
+        .chat_field_modal {
+          position: absolute;
+          top: 10px;
+          right: -500px;
+          box-shadow: 0 0 5px #cccccc;
+          border-radius: 12px;
+          padding: 20px;
+          transition: right .4s;
+          .chat_field_modal_add_user {
+              cursor: pointer;
+          }
+          .chat_field_modal_delete_user {
+              cursor: pointer;
+          }
+        }
+      }
     }
   }
   .profile_container {
@@ -106,5 +124,14 @@
       height: 100%;
       background-color: #ffffff;
     }
+  }
+  .veil_is_casually_thrown_on_a_chair{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    background-color: #000000;
+    opacity: .4;
   }
 }

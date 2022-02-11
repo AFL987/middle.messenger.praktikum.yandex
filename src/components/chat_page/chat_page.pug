@@ -10,6 +10,7 @@ include ../chat/chat.pug
             +chat("Андрей", "11:44")
             +chat("Владими", "25:77")
             +chat("Еще какая-то хрень", "пн")
+            +chat("и курсы на мидла...", "январь 21")
         .chat_field
             .chat_field_header#chat_field_header
                 .chat_field_header_avatar
@@ -18,8 +19,13 @@ include ../chat/chat.pug
                     .chat_field_header_point
                     .chat_field_header_point
                     .chat_field_header_point
+            .chat_field_main_field
+                .chat_field_modal#chat_field_modal
+                    .chat_field_modal_add_user#chat_field_modal_add_user Добавить пользователя
+                    .chat_field_modal_delete_user#chat_field_modal_delete_user Удалить пользователя
     .profile_container#profile_container
         .back_chat_container
             .back_chat_arrow#back_chat_arrow
         .profile
+    .veil_is_casually_thrown_on_a_chair#veil_is_casually_thrown_on_a_chair
 

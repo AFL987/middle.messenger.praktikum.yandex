@@ -125,13 +125,15 @@
       background-color: #ffffff;
     }
   }
-  .veil_is_casually_thrown_on_a_chair{
-    display: none;
+  .veil_container {
     position: absolute;
     height: 100vh;
     width: 100%;
-    top: 0;
-    background-color: #000000;
-    opacity: .4;
+    top: 100%;
+    .veil_is_casually_thrown_on_a_chair{
+      height: 100%;
+      background-color: #000000;
+      opacity: .4;
+    }
   }
 }

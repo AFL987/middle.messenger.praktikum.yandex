@@ -1,5 +1,8 @@
 include ../chat/chat.pug
 
+include ../input/input.pug
+include ../button/button.pug
+
 .chat_page
     .chat_container
         .chat_list
@@ -27,5 +30,19 @@ include ../chat/chat.pug
         .back_chat_container
             .back_chat_arrow#back_chat_arrow
         .profile
-    .veil_is_casually_thrown_on_a_chair#veil_is_casually_thrown_on_a_chair
+    .veil_container#veil_container
+        .veil_is_casually_thrown_on_a_chair#veil_is_casually_thrown_on_a_chair
+        #modal_add_user
+            include ../modal/modal.pug
+                block content
+                     .title_middle.text_center Добавить пользователя
+                     +input("login", "text", "input_text", "Логин")
+                     +button("Добавить", "registration")
+        #modal_delete_user
+            include ../modal/modal.pug
+                block content
+                     .title_middle.text_center Удалить пользователя
+                     +input("login", "text", "input_text", "Логин")
+                     +button("Удалить", "registration")
+
 

@@ -1,7 +1,9 @@
 function putVeil (boolen) {
-    let veilIsCasuallyThrownOnAChair = document.querySelector('#veil_is_casually_thrown_on_a_chair');
-    if(boolen) veilIsCasuallyThrownOnAChair.style.display = 'block';
-    else veilIsCasuallyThrownOnAChair.style.display = 'none';
+    let veilContainer = document.querySelector('#veil_container');
+    if(boolen) veilContainer.style.top = '0';
+    else setTimeout(()=>{
+        veilContainer.style.top = '100%';
+    }, 500)
 }
 
 export default putVeil;

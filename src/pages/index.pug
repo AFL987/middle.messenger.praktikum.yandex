@@ -13,7 +13,7 @@ block content
             form(method="post" name="form")
                 +input("login", "text", "input_text", "Логин")
                 +input("password", "password", "input_password", "Пароль")
-                +button("Войти", "entry")
+                +button("Войти", "entry", "./chat.pug")
             div.text_center
                 a.link_mini(href='./registration.pug') Создать пользователя?
 

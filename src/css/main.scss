@@ -43,6 +43,9 @@ input {
   left: 0;
   margin: auto;
   padding: 50px 30px 30px;
+  &.auxiliary_page {
+    box-shadow: none;
+  }
 }
 
 // Заголовки

@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Document
-    body
-        h1 505
+extends ../layout/main
+
+block vars
+    - var pageTitle = '500'
+
+    include ../components/empty_space/empty_space.pug
+
+block content
+    .containerCenter.auxiliary_page
+        .title_big.text_center 500
+        +emptySpace("20")
+        .title_middle.text_center Мы уже фиксим
+        +emptySpace("60")
+        .text_center
+            a(href="./chat.pug") Назад к чатам

@@ -8,6 +8,8 @@
     border-bottom: 1px solid #3369F3;
     outline: none;
     background-color: transparent;
+    position: relative;
+    z-index: 2;
   }
   .input_error {
     color: #FF2F2F;
@@ -15,7 +17,7 @@
   label {
     color: #999999;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     left: 0;
     top: 25px;
     transition: top .3s, font-size .3s;

@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-
     // закрытие модального окна по клику на вуаль
     let veilIsCasuallyThrownOnAChair = document.querySelector('#veil_is_casually_thrown_on_a_chair');
     veilIsCasuallyThrownOnAChair.addEventListener('click', () => {
@@ -46,4 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
         putVeil(false)
     })
 
+
+    //
+    let profileDataChangeLinkData = document.querySelector('#profile_data_change_link_data');
+    let profileDataChangeLinkPassword = document.querySelector('#profile_data_change_link_password');
+    profileDataChangeLinkData.addEventListener('click', () => {
+        console.log("data")
+    })
+    profileDataChangeLinkPassword.addEventListener('click', () => {
+        console.log("password")
+    })
+
+
+    //
+    let logOutOfProfile = document.querySelector('#log_out_of_profile');
+    logOutOfProfile.addEventListener('click', () => {
+        document.location.href = "./index.html";
+    })
 })

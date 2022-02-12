@@ -1,0 +1,29 @@
+{
+  "name": "practicum_yandex",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently \"npm run build\" \"npm run server\"",
+    "server": " node ./server.js",
+    "build": "parcel build src/pages/*.pug",
+    "restart": "concurrently \"npm run kill\" \"npm run server\" \"npm run build\"",
+    "kill": "npx kill-port 3000",
+    "parsel": "parcel src/pages/*.pug --open"
+  },
+  "keywords": [],
+  "author": "AF",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "express": "^4.17.2",
+    "parcel-bundler": "^1.12.5",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.2.1",
+    "sass": "^1.49.7"
+  },
+  "engines": {
+    "node": ">=16.13.2"
+  }
+}

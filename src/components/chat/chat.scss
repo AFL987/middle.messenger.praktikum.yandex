@@ -1,0 +1,22 @@
+.chat {
+  position: relative;
+  padding: 12px 0;
+  border-bottom: 1px solid #EFEFEF;
+  display: flex;
+  justify-content: start;
+  cursor: pointer;
+  .chat_avatar {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    background-color: #EFEFEF;
+  }
+  .chat_text {
+    width: 203px;
+    padding-left: 10px;
+  }
+  .chat_time {
+    position: absolute;
+    right: 0;
+  }
+}

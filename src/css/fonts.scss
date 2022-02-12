@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "InterMedium";
+  font-weight: normal;
+  font-style: normal;
+  src: local("InterMedium"),
+  local("Inter Medium"),
+  url("../static/fonts/inter_medium.woff2") format("woff2"),
+  url("../static/fonts/inter_medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SemiBold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("SemiBold"),
+  local("SemiBold"),
+  url("../static/fonts/inter_semiBold.woff2") format("woff2"),
+  url("../static/fonts/inter_semiBold.woff") format("woff");
+  font-display: swap;
+}

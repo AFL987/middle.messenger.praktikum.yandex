@@ -1,0 +1,22 @@
+extends ../layout/main
+
+block vars
+    - var pageTitle = 'Главная страница'
+
+    include ../components/input/input.pug
+    include ../components/button/button.pug
+
+block content
+    .containerCenter
+        .title_middle.text_center Вход
+        .form_container
+            form(method="post" name="form")
+                +input("login", "text", "input_text", "Логин")
+                +input("password", "password", "input_password", "Пароль")
+                +button("Войти", "entry", "./chat.pug")
+            div.text_center
+                a.link_mini(href='./registration.pug') Создать пользователя?
+
+
+
+

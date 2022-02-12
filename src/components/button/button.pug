@@ -1,0 +1,8 @@
+mixin button(title, additionalClass, typeBlock)
+
+    if typeBlock==="zero"
+        button.button(class=additionalClass type="button")= title
+    else if typeBlock
+             a.button_test(class=additionalClass href=typeBlock)= title
+    else
+        button.button(class=additionalClass type="submit")= title

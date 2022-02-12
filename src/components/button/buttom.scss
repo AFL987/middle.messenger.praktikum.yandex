@@ -1,0 +1,40 @@
+.button {
+  width: 280px;
+  background-color: #3369F3;
+  margin: 10px 0;
+  padding: 12px 70px;
+  border-radius: 8px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  &.entry {
+    margin-top: 140px;
+  }
+  &.registration {
+    margin-top: 35px;
+  }
+  &.exit {
+    background-color: #ff0000;
+  }
+}
+
+.button_test {
+  display: block;
+  width: 280px;
+  background-color: #3369F3;
+  margin: 10px 0;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 13px;
+  border: none;
+  &.entry {
+    margin-top: 140px;
+  }
+  &.registration {
+    margin-top: 35px;
+  }
+}

@@ -1,0 +1,30 @@
+.input_container{
+  padding: 16px 0 0;
+  position: relative;
+  .input_login, .input_password, .input_text, .input_email, .input_tel {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #3369F3;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+  }
+  .input_error {
+    color: #FF2F2F;
+  }
+  label {
+    color: #999999;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 25px;
+    transition: top .3s, font-size .3s;
+  }
+}
+
+input:focus + label, input:not(:placeholder-shown) + label {
+  font-size: 9px;
+  top: 5px;
+}

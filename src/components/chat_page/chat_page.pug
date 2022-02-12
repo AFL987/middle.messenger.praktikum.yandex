@@ -1,9 +1,11 @@
 include ../chat/chat.pug
-
 include ../input/input.pug
 include ../button/button.pug
+include ../profile_data_line/profile_data_line.pug
+include ../empty_space/empty_space.pug
 
 .chat_page
+
 
     <!-- ЧАТ -->
     .chat_container
@@ -30,6 +32,7 @@ include ../button/button.pug
                     .chat_field_modal_add_user#chat_field_modal_add_user Добавить пользователя
                     .chat_field_modal_delete_user#chat_field_modal_delete_user Удалить пользователя
 
+
     <!-- ПРОФИЛЬ -->
     .profile_container#profile_container
         .back_chat_container
@@ -39,7 +42,21 @@ include ../button/button.pug
             .profile_data_container
                 .profile_avatar
                     img(src="./../static/images/default_avatar.svg")
-                .profile_name.title_middle Александр
+                .profile_data_container_for_line
+                    .profile_name.title_middle Александр
+                     +emptySpace("50")
+                    +profileDataLine("Почта", "fyu678@mail.ru")
+                    +profileDataLine("Логин", "fyu678")
+                    +profileDataLine("Имя", "Петр")
+                    +profileDataLine("Фамилия", "Михайлов")
+                    +profileDataLine("Имя в чате", "Петр")
+                    +profileDataLine("Телефон", "+7 (909) 967 30 30")
+                    +emptySpace("50")
+                    .profile_data_change_link.text_l Изменить данные
+                    .profile_data_change_link.text_l Изменить пароль
+                    .log_out_of_profile.text_l Выйти
+
+
 
 
     <!-- ПОП АП -->

@@ -8,11 +8,15 @@
   color: #ffffff;
   font-size: 13px;
   border: none;
+  cursor: pointer;
   &.entry {
     margin-top: 140px;
   }
   &.registration {
     margin-top: 35px;
+  }
+  &.exit {
+    background-color: #ff0000;
   }
 }
 

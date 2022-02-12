@@ -46,18 +46,32 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    //
+    // Открытие/закрытие полей для внесения изменений в профиль
     let profileDataChangeLinkData = document.querySelector('#profile_data_change_link_data');
     let profileDataChangeLinkPassword = document.querySelector('#profile_data_change_link_password');
+    let profileDataContainerForLine = document.querySelectorAll('.profile_data_container_for_line');
+    let profileButtonExit = document.querySelectorAll('.profile_data_container_for_line button.exit');
     profileDataChangeLinkData.addEventListener('click', () => {
-        console.log("data")
+        profileOpenChange(1)
     })
     profileDataChangeLinkPassword.addEventListener('click', () => {
-        console.log("password")
+        profileOpenChange(2)
     })
+    profileButtonExit[0].addEventListener('click', () => {
+        profileOpenChange(0)
+    })
+    profileButtonExit[1].addEventListener('click', () => {
+        profileOpenChange(0)
+    })
+    function profileOpenChange (int) {
+        profileDataContainerForLine.forEach( item => {
+            item.style.height = '0';
+        })
+        profileDataContainerForLine[int].style.height = 'auto';
+    }
 
 
-    //
+    // Выйти из аккаунта
     let logOutOfProfile = document.querySelector('#log_out_of_profile');
     logOutOfProfile.addEventListener('click', () => {
         document.location.href = "./index.html";

@@ -3,6 +3,7 @@ include ../input/input.pug
 include ../button/button.pug
 include ../profile_data_line/profile_data_line.pug
 include ../empty_space/empty_space.pug
+include ../profile_data_line_change/profile_data_line_change.pug
 
 .chat_page
 
@@ -42,9 +43,9 @@ include ../empty_space/empty_space.pug
             .profile_data_container
                 .profile_avatar
                     img(src="./../static/images/default_avatar.svg")
-                .profile_data_container_for_line
+                .profile_data_container_for_line#profile_data_container_for_line_main
                     .profile_name.title_middle Александр
-                     +emptySpace("50")
+                    +emptySpace("50")
                     +profileDataLine("Почта", "fyu678@mail.ru")
                     +profileDataLine("Логин", "fyu678")
                     +profileDataLine("Имя", "Петр")
@@ -55,9 +56,26 @@ include ../empty_space/empty_space.pug
                     .profile_data_change_link.text_l#profile_data_change_link_data Изменить данные
                     .profile_data_change_link.text_l#profile_data_change_link_password Изменить пароль
                     .log_out_of_profile.text_l#log_out_of_profile Выйти
-
-
-
+                .profile_data_container_for_line
+                    form
+                        +emptySpace("94")
+                        +profileDataLineChange("Почта", "fyu678@mail.ru")
+                        +profileDataLineChange("Логин", "fyu678")
+                        +profileDataLineChange("Имя", "Петр")
+                        +profileDataLineChange("Фамилия", "Михайлов")
+                        +profileDataLineChange("Имя в чате", "Петр")
+                        +profileDataLineChange("Телефон", "+7 (909) 967 30 30")
+                        +emptySpace("50")
+                        +button("Сохранить", "registration", "zero")
+                        +button("Отменить", "exit", "zero")
+                .profile_data_container_for_line
+                    form
+                        +emptySpace("94")
+                        +profileDataLineChange("Старый пароль", "666666666", "password", "password")
+                        +profileDataLineChange("Старый пароль", "666666666", "password", "password")
+                        +profileDataLineChange("Старый пароль", "666666666", "password", "password")
+                        +button("Сохранить", "registration", "zero")
+                        +button("Отменить", "exit", "zero")
 
     <!-- ПОП АП -->
     .veil_container#veil_container

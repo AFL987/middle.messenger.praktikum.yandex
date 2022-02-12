@@ -157,7 +157,12 @@
           text-align: center;
         }
         .profile_data_container_for_line {
-
+          height: 0;
+          text-align: center;
+          overflow: hidden;
+          &#profile_data_container_for_line_main{
+            height: auto;
+          }
         }
         .profile_data_change_link {
           padding: 10px 0;

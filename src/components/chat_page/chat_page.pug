@@ -59,20 +59,20 @@ include ../profile_data_line_change/profile_data_line_change.pug
                 .profile_data_container_for_line
                     form
                         +emptySpace("94")
-                        +profileDataLineChange("Почта", "fyu678@mail.ru")
-                        +profileDataLineChange("Логин", "fyu678")
-                        +profileDataLineChange("Имя", "Петр")
-                        +profileDataLineChange("Фамилия", "Михайлов")
-                        +profileDataLineChange("Имя в чате", "Петр")
-                        +profileDataLineChange("Телефон", "+7 (909) 967 30 30")
+                        +profileDataLineChange("Почта", "fyu678@mail.ru", "email", "email")
+                        +profileDataLineChange("Логин", "fyu678", "login", "text")
+                        +profileDataLineChange("Имя", "Петр", "first_name", "text")
+                        +profileDataLineChange("Фамилия", "Михайлов", "second_name", "text")
+                        +profileDataLineChange("Имя в чате", "Петр", "display_name", "text")
+                        +profileDataLineChange("Телефон", "+7 (909) 967 30 30", "phone", "tel")
                         +emptySpace("50")
                         +button("Сохранить", "registration", "zero")
                         +button("Отменить", "exit", "zero")
                 .profile_data_container_for_line
                     form
                         +emptySpace("94")
-                        +profileDataLineChange("Старый пароль", "666666666", "password", "password")
-                        +profileDataLineChange("Старый пароль", "666666666", "password", "password")
+                        +profileDataLineChange("Старый пароль", "666666666", "oldPassword", "password")
+                        +profileDataLineChange("Старый пароль", "666666666", "newPassword", "password")
                         +profileDataLineChange("Старый пароль", "666666666", "password", "password")
                         +button("Сохранить", "registration", "zero")
                         +button("Отменить", "exit", "zero")

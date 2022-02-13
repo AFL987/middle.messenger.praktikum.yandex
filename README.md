@@ -1,3 +1,8 @@
+Открытый pull request: https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/2
+
+первый раз случайно сделал pull request из ветки deploy https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/1
+
+
 # Учебный чат
 
 ## Установка

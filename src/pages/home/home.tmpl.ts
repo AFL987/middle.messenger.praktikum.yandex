@@ -1,5 +1,6 @@
 import foo from '../../../static/svg/*.svg';
 export default `
+#navigationPanel
 .chat
     .sidebar
         .sidebar__content

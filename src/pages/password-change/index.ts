@@ -7,6 +7,7 @@ import Profile from '../../components/profile';
 import Form from '../../components/form';
 import images from '../../../static/img/*.png';
 import BackPanel from "../../components/back-panel";
+import NavigationPanel from "../../components/navigation-panel";
 
 const formTempl = `
 form
@@ -22,6 +23,9 @@ new PagePasswordChange({
     title: 'pagePasswordChange',
     template: template,
     children: {
+
+				navigationPanel: new NavigationPanel().getContent(),
+
         profile: new Profile({
             name: 'John Les',
             srcImg: images.L,

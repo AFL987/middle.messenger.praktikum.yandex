@@ -6,6 +6,7 @@ import InputForm from '../../components/input-form';
 import PageHome from './home';
 import images from '../../../static/img/*.png';
 import Form from '../../components/form';
+import NavigationPanel from "../../components/navigation-panel";
 
 const formTmpl = `
 #message
@@ -16,6 +17,7 @@ new PageHome({
     template: template,
     children: {
 
+				navigationPanel: new NavigationPanel().getContent(),
         searchForm: new SearchForm().getContent(),
 
 				// ЧАТЫ

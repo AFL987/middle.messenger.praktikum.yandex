@@ -5,10 +5,10 @@
   "scripts": {
     "start": "concurrently \"npm run build\" \"npm run server\"",
     "server": " node ./server.js",
-    "build": "parcel build src/pages/*.pug",
+    "build": "p build src/pages/*.pug",
     "restart": "concurrently \"npm run kill\" \"npm run server\" \"npm run build\"",
     "kill": "npx kill-port 3000",
-    "parsel": "parcel src/pages/*.pug --open"
+    "p": "parcel ./src/index.pug --no-cache --open"
   },
   "keywords": [],
   "author": "AF",
@@ -20,8 +20,14 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
+
+    "eslint": "^8.10.0",
+    "eslint-config-google": "^0.14.0",
     "@parcel/transformer-pug": "^2.2.1",
-    "sass": "^1.49.7"
+		"pug": "^3.0.2",
+    "sass": "^1.49.7",
+    "stylelint": "^13.13.1",
+    "typescript": "^4.6.2"
   },
   "engines": {
     "node": ">=16.13.2"

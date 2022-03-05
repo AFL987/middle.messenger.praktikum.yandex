@@ -4,6 +4,7 @@ import Input from '../../components/input';
 import PageSignUp from './signUp';
 import template from './signUp.tmpl';
 import Form from '../../components/form';
+import NavigationPanel from "../../components/navigation-panel";
 
 const formTmpl = `
 form
@@ -23,6 +24,8 @@ new PageSignUp({
     title: 'pageSignUp',
     template: template,
     children: {
+
+				navigationPanel: new NavigationPanel().getContent(),
 
         form: new Form({
             template: formTmpl,

@@ -1,0 +1,15 @@
+.navigation-panel {
+	position: absolute;
+	background-color: #eeeeee;
+	padding: 20px;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+	a {
+		color: blue!important;
+		cursor: pointer;
+		&:hover {
+			color: red!important;
+		}
+	}
+}

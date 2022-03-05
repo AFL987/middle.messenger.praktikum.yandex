@@ -8,6 +8,7 @@ import Profile from '../../components/profile';
 import Form from '../../components/form';
 import images from '../../../static/img/*.png';
 import BackPanel from "../../components/back-panel";
+import NavigationPanel from "../../components/navigation-panel";
 
 const formTmpl = `
 .form
@@ -27,6 +28,9 @@ new PageProfile({
     title: 'profileSetting',
     template: template,
     children: {
+
+				navigationPanel: new NavigationPanel().getContent(),
+
         profile: new Profile({
             name: 'John Les',
             srcImg: images.L,

@@ -1,0 +1,73 @@
+.msg-item {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	font-family: 'InterMedium', sans-serif;
+	color: rgba(0, 0, 0, 0.9);
+	display: grid;
+	position: relative;
+
+	&__avatar {
+		margin: 0px 10px;
+		grid-area: avatar;
+	}
+
+	&__name {
+		grid-area: name;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-family: 'InterMedium', sans-serif;
+		font-size: 1.1rem;
+	}
+
+	&__message {
+		grid-area: message;
+		background-color: #F8F8F8;
+		padding: 15px	15px 30px;
+		border-radius: 15px;
+	}
+
+	&__time {
+		font-size: 0.8rem;
+		position: absolute;
+		bottom: 20px;
+	}
+
+	&__status {
+		grid-area: status;
+		width: 100%;
+	}
+
+	&__menu {
+		grid-area: menu;
+		display: none;
+	}
+}
+
+.message-in {
+	justify-content: flex-start;
+	justify-items: flex-start;
+	grid-template-columns: 0 auto 55%;
+	grid-template-areas:
+		"avatar name time"
+		"avatar message status";
+	.msg-item__time {
+		left: 25px;
+	}
+}
+
+.message-out {
+	justify-content: flex-end;
+	justify-items: flex-end;
+	grid-template-columns: 55% auto 0;
+	grid-template-areas:
+		"time name avatar"
+		"status message avatar";
+	.msg-item__message {
+		background-color: #E4EDFD;
+	}
+	.msg-item__time {
+		right: 25px;
+	}
+}

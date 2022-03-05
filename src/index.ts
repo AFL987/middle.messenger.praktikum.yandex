@@ -1,6 +1,3 @@
-import './css/main.scss';
-
-import './components/chat_page/chat_page.ts'
-import './components/chat/chat.ts'
-
-console.log("testt@22772")
+if(document.location.hash === ''){
+	document.location.href = "/pages/signIn/index.html";
+}

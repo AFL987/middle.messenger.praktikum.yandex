@@ -1,0 +1,61 @@
+.chat-list {
+	li {
+		border-bottom: 1px solid #EAEAEA;
+		&:hover {
+			background-color: #E4EDFD;
+		}
+	}
+}
+
+.chat-item {
+	padding: 15px;
+	border-radius: 10px;
+	font-family: 'InterMedium', sans-serif;
+	color: rgba(0, 0, 0, 0.9);
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas:
+		"avatar name time"
+		"avatar message status";
+	cursor: pointer;
+
+	&_is-active {
+		position: sticky;
+		top: 98px;
+		background-color: #E4EDFD;
+	}
+
+	&__name {
+		grid-area: name;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-family: 'InterMedium', sans-serif;
+		font-size: 1.1rem;
+	}
+
+	&__message {
+		grid-area: message;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 0.9rem;
+	}
+
+	&__time {
+		grid-area: time;
+		font-size: 0.8rem;
+	}
+
+	&__status {
+		grid-area: status;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__notifications {
+		grid-area: notifications;
+		display: none;
+	}
+}

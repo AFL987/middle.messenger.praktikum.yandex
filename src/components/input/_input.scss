@@ -1,0 +1,34 @@
+.input_container{
+	padding: 16px 0 0;
+	position: relative;
+	input {
+		width: 100%;
+		height: 30px;
+		border: none;
+		border-bottom: 1px solid #3369F3;
+		outline: none;
+		background-color: transparent;
+		position: relative;
+		z-index: 2;
+		font-family: "InterMedium";
+		font-size: 13px;
+	}
+	.input_error {
+		color: #FF2F2F;
+		height: 16px;
+	}
+	label {
+		color: #999999;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 25px;
+		transition: top .3s, font-size .3s;
+		font-size: 13px;
+	}
+}
+
+input:focus + label, input:not(:placeholder-shown) + label {
+	font-size: 9px;
+	top: 5px;
+}

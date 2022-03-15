@@ -1,0 +1,51 @@
+.input-form {
+    flex: 0 0 auto;
+    display: flex;
+    background-color: #fff;
+    margin: 20px;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 10px;
+    min-height: 0;
+
+    &__message {
+        flex: 1 1 auto;
+        margin: 10px;
+
+        input {
+            width: 100%;
+            padding: 15px;
+            outline: none;
+            border: none;
+						border-radius: 50px;
+						background-color: #EFEFEF;
+        }
+    }
+
+    &__icon-emoji {
+        margin: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        fill: #a8b2b9;
+    }
+
+    &__media-attach {
+        margin: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        fill: #a8b2b9;
+    }
+
+    &__send-message {
+        margin: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        fill: #fff;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,15 @@
+.footer {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+
+.chat {
+	display: grid;
+	grid-template-columns: 350px auto;
+}
+
+.message-form {
+	width: 100%;
+	padding: 0px;
+}

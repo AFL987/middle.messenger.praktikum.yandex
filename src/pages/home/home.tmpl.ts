@@ -1,4 +1,3 @@
-import foo from '../../../static/svg/*.svg';
 export default `
 #navigationPanel
 .chat
@@ -6,7 +5,7 @@ export default `
         .sidebar__content
             .app-bar             
                 .app-bar__log-out
-                    a(href="../profile/index.html") Профиль &gt;
+                 #linkProf   
             #searchForm
             nav
             ul.chat-list

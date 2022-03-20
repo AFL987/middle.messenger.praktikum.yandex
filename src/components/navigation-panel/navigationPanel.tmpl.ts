@@ -1,17 +1,17 @@
 export default `
 .navigation-panel Временная панель <br/> навигации
 	div
-		a(href= '/pages/signIn/index.html') главная
+		a(href= '/') главная
 	div
-		a(href= '/pages/signUp/index.html') регистрация
+		a(href= '/signup') регистрация
 	div
-		a(href= '/pages/home/index.html') чаты
+		a(href= '/chats') чаты
 	div
-		a(href= '/pages/profile/index.html') профиль
+		a(href= '/profile') профиль
 	div
-		a(href= '/pages/password-change/index.html') смена пароля	
+		a(href= '/password-change') смена пароля	
 	div
-		a(href= '/pages/404-page/index.html') 404
+		a(href= '/404') 404
 	div
-		a(href= '/pages/500-page/index.html') 500				
+		a(href= '/500') 500				
 `;

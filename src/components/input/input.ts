@@ -37,7 +37,7 @@ export default class Input extends Block {
             ...props,
             events,
             errorBlock,
-            children: {error: errorBlock.getContent()},
+            children: {error: errorBlock},
             tagName: 'section',
             className: 'input',
         });

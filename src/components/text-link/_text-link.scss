@@ -1,20 +1,20 @@
 .text-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 15px 0px;
 
-    &_style {
-        font-family: 'InterMedium', sans-serif;
-    }
+	&_style {
+		font-family: 'InterMedium', sans-serif;
+	}
 
-    &_input {
-        width: 43%;
-        margin: 0px;
-    }
-		a {
-			margin: 0;
-			font-size: 13px;
-			color: #3369F3!important;
-		}
+	&_input {
+		width: 43%;
+		margin: 0px;
+	}
+	a {
+		margin: 0;
+		font-size: 13px;
+		color: #3369F3!important;
+	}
 }

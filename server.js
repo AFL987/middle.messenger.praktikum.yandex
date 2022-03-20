@@ -12,9 +12,9 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // });
 
 app.use((req, res) => {
-    res.redirect('/pages/404-page/index.html');
+	res.redirect('/pages/404-page/index.html');
 })
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}/`);
+	console.log(`Server is running on http://localhost:${port}/`);
 });

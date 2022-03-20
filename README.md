@@ -1,5 +1,5 @@
 # Пулл реквест
-Открытый pull request: https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/9
+Открытый pull request: https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/10
 
 # Учебный чат
 

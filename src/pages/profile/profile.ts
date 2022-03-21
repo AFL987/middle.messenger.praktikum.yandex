@@ -48,7 +48,7 @@ export default class PageProfile extends Block {
                 inputEmail: new Input({
                     type: 'email',
                     name: 'email',
-                    value: 'fyu678@mail.ru',
+                    value: '',
                     label: 'Почта',
                     placeholder: 'Введите почту',
                 }),
@@ -56,7 +56,7 @@ export default class PageProfile extends Block {
                 inputLogin: new Input({
                     type: 'text',
                     name: 'login',
-                    value: 'fyu678',
+                    value: '',
                     label: 'Логин',
                     placeholder: 'Введите логин',
                 }),
@@ -64,7 +64,7 @@ export default class PageProfile extends Block {
                 inputFirstName: new Input({
                     type: 'text',
                     name: 'firstName',
-                    value: 'Петр',
+                    value: '',
                     label: 'Имя',
                     placeholder: 'Введите имя',
                 }),
@@ -72,7 +72,7 @@ export default class PageProfile extends Block {
                 inputSecondName: new Input({
                     type: 'text',
                     name: 'secondName',
-                    value: 'Михайлов',
+                    value: '',
                     label: 'Фамилия',
                     placeholder: 'Введите фамилию',
                 }),
@@ -80,14 +80,14 @@ export default class PageProfile extends Block {
                 inputDisplayName: new Input({
                     type: 'text',
                     name: 'displayName',
-                    value: 'Петр777',
+                    value: '',
                     label: 'Имя в чате',
                     placeholder: 'Введите имя для чата',
                 }),
                 inputPhone: new Input({
                     type: 'tel',
                     name: 'phone',
-                    value: '89999999999',
+                    value: '',
                     label: 'Телефон',
                     placeholder: 'Введите номер телефона',
                 }),

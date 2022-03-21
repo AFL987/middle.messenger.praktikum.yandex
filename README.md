@@ -1,6 +1,13 @@
 # Пулл реквест
 Открытый pull request: https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/10
 
+# Netlify
+Раскатка на netlify: https://quizzical-saha-14510b.netlify.app/
+Аккаунт в netlify, если вдруг Вам нужно:
+https://www.netlify.com/
+логин: asf987@mail.ru
+пароль: !N9YV9ueJ@
+
 # Учебный чат
 
 ## Установка

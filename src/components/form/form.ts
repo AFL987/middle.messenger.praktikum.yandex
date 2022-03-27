@@ -61,6 +61,8 @@ export default class Form extends Block {
         new AuthApi().signUp(value)
             .then((data) => {
                 const userInfo = JSON.parse(data.response);
+								router.go('/chats');
+								console.log(userInfo);
             }).catch((err) => {
                 console.error(err);
             });
@@ -74,6 +76,7 @@ export default class Form extends Block {
                 new AuthApi().getUserInfo()
                     .then((result) => {
                         const userInfo = JSON.parse(result.response);
+												console.log(userInfo);
                     });
             }).catch((err) => {
                 console.error(err);

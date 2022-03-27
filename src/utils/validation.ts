@@ -22,7 +22,7 @@ const passwordVerification = (value) => {
     return {value: value, messageError: error};
 };
 const textVerification = (value) => {
-    const error = value.length > 4 ? '' : 'Не менее 3 символов!';
+    const error = value.length > 2 ? '' : 'Не менее 3 символов!';
     return {value: value, messageError: error};
 };
 const emailVerification = (value) => {

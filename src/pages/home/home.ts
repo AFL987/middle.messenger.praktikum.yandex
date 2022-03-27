@@ -310,6 +310,7 @@ export default class PageHome extends Block {
                     srcImg: userInfo.avatar || images.L,
                 });
             }).catch((err) => {
+								router.go('/');
                 console.error(err);
             });
         const {template} = this.props;

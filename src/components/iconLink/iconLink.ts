@@ -9,7 +9,7 @@ export default class IconLink extends Block {
             click: {
                 tagEvent: props.className || 'link',
                 callback: () => {
-                    const {link} = props;
+										const {link = ''} = props;
                     router.go(link);
                 },
             },

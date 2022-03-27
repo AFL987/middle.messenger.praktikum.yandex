@@ -1,15 +1,14 @@
 export default class WebSocketMessage {
-    private socket: WebSocket;
+    socket: WebSocket;
     static __instance: WebSocketMessage;
-    callBack: () => [];
+    callBack: (arg: any) => [];
 
-    constructor(userId?: string, chatId?: number, chatToken?: string, callBack?: () => []) {
+    constructor(callBack: (arg: any) => [], userId?: string, chatId?: number, chatToken?: string) {
         if (userId && chatId && chatToken) {
-            this.socket?.close();
+            WebSocketMessage.__instance?.socket.close();
             this.socket = new WebSocket(`wss://ya-praktikum.tech/ws/chats/${userId}/${chatId}/${chatToken}`);
             this._registerEvents();
-        }
-        if (WebSocketMessage.__instance) {
+        } else {
             this.callBack = callBack;
             return WebSocketMessage.__instance;
         }

@@ -21,9 +21,8 @@ form
 `;
 export default class PageSignIn extends Block {
     constructor(props: PropsPage) {
-        const _template = template;
         document.title = 'pageSignIn';
-
+				const _template = template;
         const _titleAuth = new TitleAuth({
 					title: 'Вход'
 				})

@@ -1,26 +1,12 @@
 import HTTPTransport from '../api/HTTPTransport';
-import {snakeToCamel, camelToSnake} from '../utils/snakeCamel';
+import {camelToSnake} from '../utils/snakeCamel';
+import {userRequest, changePasswordRequest} from './types';
 
 const host = 'https://ya-praktikum.tech/api/v2/user';
 
 const userApi = new HTTPTransport(host);
 
-type userRequest = {
-    firstName: string,
-    secondName: string,
-    displayName: string,
-    login: string,
-    email: string,
-    phone: string,
-}
-
-type changePasswordRequest = {
-    oldPassword: string,
-    newPassword: string,
-}
-
 class UserApi {
-    private userInfo: XMLHttpRequest | string | null = null;
 
     changeUserProfile(data: userRequest) {
         const dataFormSnakel = camelToSnake(data);
@@ -50,7 +36,7 @@ class UserApi {
         };
         return userApi.put('/password', options);
     }
-    searchUser(data) {
+    searchUser(data: string) {
         const options = {
             data: JSON.stringify({login: data}),
             headers: {

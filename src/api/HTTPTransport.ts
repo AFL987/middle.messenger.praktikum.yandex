@@ -17,7 +17,7 @@ type IOption = {
     withCredentials?: boolean;
 }
 
-function queryStringify(data): string {
+function queryStringify(data: any = {}): string {
     if (data === undefined || typeof data !== 'object') {
         throw new Error('error data');
     }
@@ -72,14 +72,10 @@ export default class HTTPTransport {
                     reject(xhr.response);
                     return;
                 }
-                if (xhr.status < 500) {
-                    reject(xhr.response);
-                    return;
-                }
                 if (xhr.status !== 200) {
-                    reject(JSON.parse(xhr.response));
+                    reject(xhr.response);
                 }
-                resolve(xhr.response);
+                resolve(xhr);
             };
             xhr.timeout = timeout;
             xhr.onabort = reject;

@@ -5,6 +5,7 @@ export default `
         .sidebar__content
             .app-bar             
                 .app-bar__log-out
+                 #logout
                  #linkProf   
             #searchForm
             nav

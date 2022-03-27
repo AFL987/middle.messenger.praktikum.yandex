@@ -1,22 +1,12 @@
 import HTTPTransport from '../api/HTTPTransport';
-import {snakeToCamel, camelToSnake} from '../utils/snakeCamel';
+import {camelToSnake} from '../utils/snakeCamel';
+import {SignUpRequest} from './types';
 
 const host = 'https://ya-praktikum.tech/api/v2/auth';
 
 const authApi = new HTTPTransport(host);
 
-type SignUpRequest = {
-    firstName: string,
-    secondName: string,
-    login: string,
-    email: string,
-    password: string,
-    phone: string,
-}
-
 class AuthAPI {
-    private userInfo: XMLHttpRequest | string | null = null;
-
     signUp(data: SignUpRequest) {
         const dataFormSnakel = camelToSnake(data);
         const options = {

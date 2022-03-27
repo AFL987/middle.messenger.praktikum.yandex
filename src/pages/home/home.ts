@@ -17,6 +17,8 @@ import HistoryMessagesList from '../../components/historyMessagesList';
 import router from '../../index';
 import NavigationPanel from "../../components/navigation-panel";
 import Link from "../../components/link";
+import IconLink from "../../components/iconLink";
+import logoutIcon from '../../../static/img/exit.svg';
 
 const formTmpl = `
 #message
@@ -40,6 +42,20 @@ export default class PageHome extends Block {
 					title: 'Профиль >',
 					link: '/profile',
 				});
+
+			const logout = new IconLink({
+				className: 'logout',
+				srcIcon: logoutIcon,
+				events: {
+					click: {
+						tagEvent: 'logout',
+						callback: () => {
+							router.go('/');
+							new AuthAPI().logout();
+						},
+					},
+				},
+			});
 
         const _avatarProfile = new Profile({
             name: '',
@@ -101,7 +117,7 @@ export default class PageHome extends Block {
                         }
                     },
                 },
-            };
+            }
         });
 
         const _historyMessagesList = new HistoryMessagesList();
@@ -140,6 +156,7 @@ export default class PageHome extends Block {
                 appBar: _appBar,
                 avatarProfile: _avatarProfile,
                 searchForm: _searchForm,
+								logout: logout,
 								linkProf: _linkProf,
                 dialogCardList: _dialogCardList,
                 historyMessagesList: _historyMessagesList,

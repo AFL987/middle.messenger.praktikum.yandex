@@ -1,4 +1,5 @@
-# Пулл реквест
+# Пулл реквест 
+Визуалт и выведение чатов к финальному спринту поправлю, ок? :(
 Открытый pull https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/12
 
 # Netlify

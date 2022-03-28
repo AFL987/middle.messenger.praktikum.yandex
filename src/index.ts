@@ -10,13 +10,13 @@ import Page500 from './pages/500-page';
 const router = new Router('#app');
 
 router
-    .use('/signup', PageSignUp)
-    .use('/chats', PageHome)
-    .use('/profile', PageProfile)
-    .use('/password-change', PagePasswordChange)
-    .use('/404', Page404)
-    .use('/500', Page500)
-    .use('/', PageSignIn)
+		.use("/", PageSignIn)
+    .use("/signup", PageSignUp)
+    .use("/chats", PageHome)
+    .use("/profile", PageProfile)
+    .use("/password-change", PagePasswordChange)
+    .use("/404", Page404)
+    .use("/500", Page500)
     .start();
 
 export default router;

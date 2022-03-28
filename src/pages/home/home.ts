@@ -19,6 +19,7 @@ import NavigationPanel from "../../components/navigation-panel";
 import Link from "../../components/link";
 import IconLink from "../../components/iconLink";
 import logoutIcon from '../../../static/img/exit.svg';
+import plusIcon from '../../../static/img/plus.svg';
 
 const formTmpl = `
 #message
@@ -102,6 +103,7 @@ export default class PageHome extends Block {
                             }).then(() => {
                                 return this.connectToChat(idChat);
                             }).then(({token}) => {
+																console.log(token)
                                 return this.connectToServerSocket(this._userId, idChat, token);
                             })
                         for (let card in this._cardList) {
@@ -148,6 +150,44 @@ export default class PageHome extends Block {
             },
         });
 
+			const _addChat = new FormInputIcon({
+				placeholder: 'Введите название чата',
+				name: 'addChat',
+				value: '',
+				srcIcon: plusIcon,
+				events: {
+					input: {
+						tagEvent: 'input',
+						callback: (e: Event) => {
+							e.preventDefault();
+							const element = e.target as HTMLInputElement;
+							this.value = element.value;
+						},
+					},
+					click: {
+						tagEvent: 'button',
+						callback: (e: Event) => {
+							e.preventDefault();
+							if (this.value.length > 3) {
+								new ChatsApi().createChat(this.value)
+									.then((data) => {
+										const result = JSON.parse(data.response);
+										console.log(result);
+										this.value = '';
+										this.fetchChatsList();
+									}).catch((err) => {
+									console.error(err);
+								});
+							} else {
+								this.setProps({
+									error: true,
+								});
+							}
+						},
+					},
+				},
+			});
+
         super({
             template: _template,
             _message: [],
@@ -157,6 +197,7 @@ export default class PageHome extends Block {
                 avatarProfile: _avatarProfile,
                 searchForm: _searchForm,
 								logout: logout,
+								addChat: _addChat,
 								linkProf: _linkProf,
                 dialogCardList: _dialogCardList,
                 historyMessagesList: _historyMessagesList,
@@ -292,11 +333,11 @@ export default class PageHome extends Block {
 
     connectToServerSocket(userId: string, chatId: number, token) {
         if (userId && chatId && token) {
-            new WebSocketMessage(userId, chatId, token, this.fetchChatMessageList.bind(this))
+					new WebSocketMessage(this.fetchChatMessageList.bind(this), userId, chatId, token)
         }
     }
     sendMessage(message: string) {
-        new WebSocketMessage().send(message);
+				new WebSocketMessage(this.fetchChatMessageList.bind(this)).send(message);
     }
     render(): string {
         new AuthAPI().getUserInfo()

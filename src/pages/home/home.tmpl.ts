@@ -8,7 +8,9 @@ export default `
                  #logout
                  #linkProf   
             #searchForm
+            #addChat
             nav
+            #dialogCardList
             ul.chat-list
                 #dialogCard1
                 #dialogCard2

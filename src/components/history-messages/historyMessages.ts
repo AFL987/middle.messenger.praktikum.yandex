@@ -4,13 +4,13 @@ import Avatar from '../avatar';
 import template from './historyMessages.tmpl';
 
 type Props = {
-    srcImg: string;
-    margin?: 'right' | 'left',
-    name: string;
-    message: string;
-    time: string;
-    status: string;
-    owner: string;
+	srcImg: string;
+	margin?: 'right' | 'left',
+	name: string | number;
+	message: string | number;
+	time: string | number;
+	status: string | number;
+	owner: string;
 }
 
 export default class HistoryMessages extends Block {

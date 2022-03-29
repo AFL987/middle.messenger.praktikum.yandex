@@ -222,7 +222,7 @@ export default class PageHome extends Block {
                 this._userId = id;
                 this.props.children.avatarProfile.setProps({
                     name: login,
-                    srcImg: avatar || images.L,
+                    srcImg: images.L,
                 });
             })
             .then(() => {
@@ -294,10 +294,10 @@ export default class PageHome extends Block {
             const {avatar, second_name, first_name, display_name} = this._usersChat[user_id];
             messageList[`messageCard${index}`] =
                 new HistoryMessages({
-                    srcImg: avatar || images.L2,
+                    srcImg: images.L2,
                     name: display_name || `${first_name} ${second_name}`,
                     message: content,
-                    time: time,
+										time: new Date(time).toLocaleTimeString(),
                     status: is_read,
                     owner: 'in',
                 });
@@ -348,7 +348,7 @@ export default class PageHome extends Block {
                 }
                 this.props.children.avatarProfile.setProps({
                     name: userInfo.login,
-                    srcImg: userInfo.avatar || images.L,
+                    srcImg: images.L,
                 });
             }).catch((err) => {
 								router.go('/');

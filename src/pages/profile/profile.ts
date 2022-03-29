@@ -145,7 +145,7 @@ export default class PageProfile extends Block {
 
                 profile.setProps({
                     name: login,
-                    srcImg: avatar || images.L,
+                    srcImg: images.L,
                 });
                 inputEmail.setProps({
                     value: email,

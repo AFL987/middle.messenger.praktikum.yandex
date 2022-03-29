@@ -1,6 +1,5 @@
-# Пулл реквест 
-Визуалт и выведение чатов к финальному спринту поправлю, ок? :(
-Открытый pull https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/12
+# Пулл реквест
+Открытый pull https://github.com/AFL987/middle.messenger.praktikum.yandex/pull/13
 
 # Netlify
 Раскатка на netlify: https://quizzical-saha-14510b.netlify.app/

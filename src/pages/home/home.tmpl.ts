@@ -18,10 +18,7 @@ export default `
                 #dialogCard4             
     main.content
         .msg
-            #historyMessages1
-            #historyMessages2
-            #historyMessages3    
-            #historyMessages4       
+            #historyMessagesList
         footer.footer
             #form
 `;

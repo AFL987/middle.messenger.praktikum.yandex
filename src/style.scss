@@ -188,6 +188,8 @@ ul {
 		}
 	}
 	.msg {
+		overflow: auto;
+		height: 80vh;
 		margin-top: 40px;
 		flex: 1 1 auto;
 	}

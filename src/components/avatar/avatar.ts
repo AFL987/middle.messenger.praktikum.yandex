@@ -7,7 +7,10 @@ type Props = {
     margin?: 'right' | 'left';
 }
 
-export defa
+export default class Avatar extends Block {
+    constructor(props: Props) {
+        super({className: 'chat-item__avatar', ...props});
+    }
     render(): string {
         const {srcImg, margin = 'right'} = this.props;
         return render(template, {srcImg, margin});

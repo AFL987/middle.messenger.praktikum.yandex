@@ -9,6 +9,11 @@
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
     "rules": {
-
+        "no-unused-vars": 2,
+        "max-len": [1, 100],
+        "max-params": [2, 3],
+        "require-jsdoc" : 0,
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "windows"]
     }
 } 

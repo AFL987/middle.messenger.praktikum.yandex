@@ -1,4 +1,3 @@
-import foo from '../../../static/svg/*.svg';
 export default `
 #navigationPanel
 .chat
@@ -6,9 +5,12 @@ export default `
         .sidebar__content
             .app-bar             
                 .app-bar__log-out
-                    a(href="../profile/index.html") Профиль &gt;
+                 #logout
+                 #linkProf   
             #searchForm
+            #addChat
             nav
+            #dialogCardList
             ul.chat-list
                 #dialogCard1
                 #dialogCard2
@@ -16,10 +18,7 @@ export default `
                 #dialogCard4             
     main.content
         .msg
-            #historyMessages1
-            #historyMessages2
-            #historyMessages3    
-            #historyMessages4       
+            #historyMessagesList
         footer.footer
             #form
 `;

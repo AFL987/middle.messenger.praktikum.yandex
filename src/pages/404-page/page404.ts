@@ -1,21 +1,27 @@
 import {render} from 'pug';
 import Block from '../../utils/block';
-
-type Props = {
-    title: string;
-    template: string;
-}
-
+import template from './page404.tmpl';
+import NavigationPanel from "../../components/navigation-panel";
+import Link from "../../components/link";
 export default class Page404 extends Block {
-    props: Props;
-    constructor(props: Props) {
-        super({...props});
-    }
-    componentDidMount(): HTMLElement {
-        const element = document.getElementById('app');
-        element?.appendChild(this.getContent());
-        return element as HTMLElement;
-    }
+    constructor() {
+			const _link = new Link({
+				title: 'Назад к чатам',
+				link: '/chats',
+			});
+
+			document.title = 'page404';
+			const _template = template;
+
+			super({
+				template: _template,
+				children: {
+					navigationPanel: new NavigationPanel(),
+					link: _link
+				}
+			});
+		}
+
     render(): string {
         const {template} = this.props;
         return render(template);

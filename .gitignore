@@ -1,9 +1,4 @@
-dist/
-build/
-
-.idea/
-node_modules/
-
-.parcel-cache/
+node_modules
 .cache
-
+dist
+.idea

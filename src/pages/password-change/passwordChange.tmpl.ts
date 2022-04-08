@@ -1,6 +1,6 @@
 export default `
-#navigationPanel
 #profile
+#navigationPanel
 #backPanel
 main.content
     #form

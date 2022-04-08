@@ -1,4 +1,3 @@
-
 import {validation} from './validation';
 
 export const getFormData = (form, page) => {
@@ -22,20 +21,20 @@ export const getFormData = (form, page) => {
 
 export const verificationSubmitValues = (form, page) => {
     const values: Record<string, string> = getFormData(form, page);
-    let resultValid = validValuesInput(values);
-
     switch (page) {
         case 'home':
             break;
         case 'pagePasswordChange':
-            const error = checkEqualityPasswords(values.password, values.passwordRepeat);
-            return {...resultValid, passwordRepeat: {value: '', messageError: error}}
+            return {...values}
             break;
         case 'profileSetting':
+            return {...values}
             break;
         case 'pageSignUp':
+            return {...values}
             break;
         case 'pageSignIn':
+            return {...values}
             break;
         default:
     }
@@ -46,10 +45,10 @@ export const checkEqualityPasswords = (password, passwordRepeat) => {
     }
 }
 
-const validValuesInput = (values) => {
-    let result = {};
-    Object.keys(values).forEach(key => {
-        result[key] = validation(values[key], key)
-    })
-    return result;
-}
+// const validValuesInput = (values) {
+//     let result = {};
+//     Object.keys(values).forEach(key => {
+//         result[key] = validation(values[key], key)
+//     })
+//     return result;
+// }

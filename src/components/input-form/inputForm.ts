@@ -3,8 +3,8 @@ import Block from '../../utils/block';
 import template from './inputForm.tmpl';
 
 export default class InputForm extends Block {
-    constructor() {
-        super({tagName: 'div', className: 'input-form'});
+    constructor(props = {}) {
+        super({tagName: 'div', className: 'input-form', ...props});
     }
     render(): string {
         return render(template);

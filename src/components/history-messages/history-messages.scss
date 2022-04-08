@@ -5,9 +5,14 @@
 	font-family: 'InterMedium', sans-serif;
 	color: rgba(0, 0, 0, 0.9);
 	display: grid;
-	position: relative;
 
 	&__avatar {
+		img {
+			width: 50px;
+			border-radius: 20%;
+			height: 50px;
+			object-fit: cover;
+		}
 		margin: 0px 10px;
 		grid-area: avatar;
 	}
@@ -23,15 +28,11 @@
 
 	&__message {
 		grid-area: message;
-		background-color: #F8F8F8;
-		padding: 15px	15px 30px;
-		border-radius: 15px;
 	}
 
 	&__time {
+		grid-area: time;
 		font-size: 0.8rem;
-		position: absolute;
-		bottom: 20px;
 	}
 
 	&__status {
@@ -48,26 +49,17 @@
 .message-in {
 	justify-content: flex-start;
 	justify-items: flex-start;
-	grid-template-columns: 0 auto 55%;
+	grid-template-columns: 60px auto 40px;
 	grid-template-areas:
 		"avatar name time"
 		"avatar message status";
-	.msg-item__time {
-		left: 25px;
-	}
 }
 
 .message-out {
 	justify-content: flex-end;
 	justify-items: flex-end;
-	grid-template-columns: 55% auto 0;
+	grid-template-columns: 40px auto 60px;
 	grid-template-areas:
 		"time name avatar"
 		"status message avatar";
-	.msg-item__message {
-		background-color: #E4EDFD;
-	}
-	.msg-item__time {
-		right: 25px;
-	}
 }

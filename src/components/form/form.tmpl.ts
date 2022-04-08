@@ -2,7 +2,7 @@ export default `
 form
     #inputLogin
     #inputPassword
-    .group-elements      
-        #button
+    .group-elements
         #link
+        #button
 `;

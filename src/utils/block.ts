@@ -12,7 +12,7 @@ type Events = {
 }
 
 type Props = {
-    children?: {[key: string]: HTMLElement};
+    children?: {[key: string]: Block};
     tagName?: string;
     className?: string;
     attribute?: Record<string, string>;
@@ -97,7 +97,7 @@ export default abstract class Block {
             Object.keys(children).forEach((key) => {
                 const _id = `#${key}`;
                 const template = this._element.querySelector(_id);
-                template?.replaceWith(children[key]);
+                template?.replaceWith(children[key].getContent());
             });
         }
         this._addEvents();
@@ -110,11 +110,18 @@ export default abstract class Block {
     }
     private _addEvents() {
         const {events = {}} = this.props;
-        debugger
         Object.keys(events).forEach((eventName) => {
             const {tagEvent, callback} = events[eventName];
-            const inputElement = this._element.querySelector(tagEvent);
-            inputElement?.addEventListener(eventName, callback);
+            const inputElement = this._element.querySelectorAll(tagEvent);
+            if (inputElement.length) {
+                inputElement.forEach(el => {
+                    el?.addEventListener(eventName, callback);
+                })
+            } else {
+                if (this._element.className === tagEvent) {
+                    this._element.addEventListener(eventName, callback);
+                }
+            }
         });
     }
     private _removeEvents() {
@@ -141,7 +148,7 @@ export default abstract class Block {
             },
             deleteProperty() {
                 throw new Error('Нет доступа');
-            };
+            },
         });
     }
 
@@ -156,5 +163,15 @@ export default abstract class Block {
             el.classList.add(className);
         }
         return el;
+    }
+
+    show(query: string) {
+        const root = document.querySelector(query);
+        root?.append(this.element);
+        this.eventBus().emit(EVENTS.FLOW_RENDER);
+    }
+
+    hide() {
+        this.element?.remove();
     }
 }

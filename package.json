@@ -10,6 +10,13 @@
     "start": "webpack --mode production && node ./server.js ",
     "test": "mocha"
   },
+	"simple-git-hooks": {
+		"pre-commit": "npx lint-staged"
+	},
+	"lint-staged": {
+		"*.{ts, js}": "eslint --cache --ext .js,.ts,.json --ignore-path .gitignore .",
+		"*.{scss, css}": "stylelint 'src/styles/**/*.{scss,css}'"
+	},
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -56,5 +63,7 @@
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "3.11.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "simple-git-hooks": "^2.7.0"
+  }
 }

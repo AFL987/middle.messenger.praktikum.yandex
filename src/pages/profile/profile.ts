@@ -7,8 +7,9 @@ import TextLink from '../../components/text-link/textLink';
 import template from './profile.tmpl';
 import Profile from '../../components/profile';
 import Form from '../../components/form';
-import images from '../../../static/img/*.png';
+import images from '../../../static/img/l.jpg';
 import AuthAPI from '../../api/authApi';
+import {snakeToCamel} from '../../utils/snakeCamel';
 import BackPanel from "../../components/back-panel";
 import NavigationPanel from "../../components/navigation-panel";
 
@@ -22,18 +23,19 @@ form
     #inputPhone
     #textLink
     .group-elements
-        #link
         #button
 `;
 
 export default class PageProfile extends Block {
+    _userName: string | unknown;
+
     constructor() {
         const _template = template;
         document.title = 'profileSetting';
 
         const _profile = new Profile({
-						name: 'John Les',
-            srcImg: images.L,
+            name: '',
+            srcImg: images,
         });
 
 			const backPanel = new BackPanel({
@@ -92,14 +94,19 @@ export default class PageProfile extends Block {
                     placeholder: 'Введите номер телефона',
                 }),
                 textLink: new TextLink({
-										text: '',
-										title: 'Изменить пароль',
+                    text: 'Пароль',
+                    title: 'Изменить пароль',
                     link: '/password-change',
                 }),
 
                 button: new Button({
-                    title: 'Сохранить',
+                    title: 'Сохранить изменения',
                     type: 'submit',
+                }),
+
+                link: new Link({
+                    title: 'Назад',
+                    link: '/chats',
                 }),
             },
         });
@@ -107,32 +114,35 @@ export default class PageProfile extends Block {
         super({
             template: _template,
             children: {
-                profile: _profile,
 								backPanel: backPanel,
 								navigationPanel: new NavigationPanel(),
+                profile: _profile,
                 form: _form,
             },
         });
+        this._userName = '';
     }
     componentDidMount(): void {
-        this.getUserInfo()
+        this.getUserInfo();
     }
 
     getUserInfo() {
         new AuthAPI().getUserInfo()
             .then((data) => {
                 const userInfo = JSON.parse(data.response);
+                const info = snakeToCamel(userInfo);
                 const {
                     avatar,
-                    display_name,
+                    displayName,
                     email,
-                    first_name,
+                    firstName,
                     login,
                     phone,
-                    second_name,
-                } = userInfo;
+                    secondName,
+                } = info;
 
-                const {profile, form} = this.props.children;
+                const profile = this.props.children?.profile;
+                const form = this.props.children?.form;
                 const {
                     inputEmail,
                     inputLogin,
@@ -140,12 +150,12 @@ export default class PageProfile extends Block {
                     inputSecondName,
                     inputDisplayName,
                     inputPhone,
-                } = form.props.children;
+                } = form?.props.children;
                 this._userName = login;
 
-                profile.setProps({
+                profile?.setProps({
                     name: login,
-                    srcImg: images.L,
+                    srcImg: avatar || images,
                 });
                 inputEmail.setProps({
                     value: email,
@@ -154,13 +164,13 @@ export default class PageProfile extends Block {
                     value: login,
                 });
                 inputFirstName.setProps({
-                    value: first_name,
+                    value: firstName,
                 });
                 inputSecondName.setProps({
-                    value: second_name,
+                    value: secondName,
                 });
                 inputDisplayName.setProps({
-                    value: display_name,
+                    value: displayName,
                 });
                 inputPhone.setProps({
                     value: phone,
@@ -169,7 +179,6 @@ export default class PageProfile extends Block {
     }
 
     render(): string {
-        const {template} = this.props;
         return render(template);
     }
 }

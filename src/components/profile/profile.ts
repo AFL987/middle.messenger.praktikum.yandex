@@ -2,7 +2,6 @@ import {render} from 'pug';
 import Block from '../../utils/block';
 import AvatarProfile from '../avatarProfile';
 import template from './profile.tmpl';
-import images from '../../../static/img/*.jpg';
 import AuthAPI from '../../api/authApi';
 
 type Props = {
@@ -13,6 +12,7 @@ type Props = {
 }
 
 export default class Profile extends Block {
+    nameUser: string;
     constructor(props: Props) {
         super({...props});
         this.nameUser = '';

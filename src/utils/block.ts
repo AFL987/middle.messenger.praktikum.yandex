@@ -8,16 +8,15 @@ enum EVENTS {
 }
 
 type Events = {
-    [key: string]: {tagEvent: string, callback: ((...args) => unknown)}
+    [key: string]: {tagEvent: string, callback: ((...args: any) => unknown)}
 }
-
 type Props = {
-    children?: {[key: string]: Block};
+    children?: {[key: string]: any};
     tagName?: string;
     className?: string;
     attribute?: Record<string, string>;
     events?: Events;
-    [key: string]: unknown | object;
+    [key: string]: any;
 
 }
 
@@ -59,10 +58,10 @@ export default abstract class Block {
     }
 
     componentDidMount() {
-        return this.element as HTMLElement
+        // return this.element as HTMLElement;
     }
 
-    private _componentDidUpdate(oldProps, newProps) {
+    private _componentDidUpdate(oldProps: Props, newProps: Props) {
         const response = this.componentDidUpdate(oldProps, newProps);
         if (response) {
             this.eventBus().emit(EVENTS.FLOW_RENDER);
@@ -76,13 +75,13 @@ export default abstract class Block {
         return true;
     }
 
-    setProps = (nextProps: Record<string, unknown>): void => {
+    setProps(nextProps: Record<string, unknown>) {
         if (!nextProps) {
             return;
         }
         Object.assign(this.props, nextProps);
         this.eventBus().emit(EVENTS.FLOW_CDU);
-    };
+    }
 
     get element() {
         return this._element;
@@ -106,7 +105,7 @@ export default abstract class Block {
     render(): string {return ''}
 
     getContent() {
-        return this.element as HTMLElement
+        return this.element as HTMLElement;
     }
     private _addEvents() {
         const {events = {}} = this.props;
@@ -116,7 +115,7 @@ export default abstract class Block {
             if (inputElement.length) {
                 inputElement.forEach(el => {
                     el?.addEventListener(eventName, callback);
-                })
+                });
             } else {
                 if (this._element.className === tagEvent) {
                     this._element.addEventListener(eventName, callback);
@@ -127,23 +126,21 @@ export default abstract class Block {
     private _removeEvents() {
         const {events = {}} = this.props;
 
-        Object.keys(events).forEach(eventName => {
+        Object.keys(events).forEach((eventName) => {
             const {tagEvent, callback} = events[eventName];
             const inputElement = this._element.querySelector(tagEvent);
             inputElement?.removeEventListener(eventName, callback);
         });
     }
-    private _makePropsProxy(props) {
-        const self = this;
-
+    private _makePropsProxy(props: Props) {
         return new Proxy(props, {
-            get(target, prop) {
+            get: (target, prop: string) => {
                 const result = target[prop];
                 return (typeof result !== 'function') ? result : result.bind(target);
             },
-            set(target, prop, value) {
+            set: (target, prop: string, value) => {
                 target[prop] = value;
-                self.eventBus().emit(EVENTS.FLOW_CDU, target);
+                this.eventBus().emit(EVENTS.FLOW_CDU, target);
                 return true;
             },
             deleteProperty() {

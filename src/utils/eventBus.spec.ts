@@ -9,7 +9,7 @@ img(src=srcImg)
 `;
 
 class Avatar extends Block {
-    constructor(props) {
+    constructor(props: any = {}) {
         super({className: 'chat-item__avatar', ...props});
     }
     render(): string {
@@ -27,7 +27,8 @@ describe('Block check', () => {
         </html>`,
         {url: 'http://localhost'}
     );
-    global.window = window;
+    const windowContext: any = window;
+    global.window = windowContext;
     global.document = window.document;
 
     it('Should create HTML element', () => {

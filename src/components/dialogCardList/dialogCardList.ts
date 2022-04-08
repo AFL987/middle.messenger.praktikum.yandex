@@ -2,8 +2,11 @@ import {render} from 'pug';
 import Block from '../../utils/block';
 import template from './dialogCardList.tmpl';
 
+type Props = {
+    [key: string]: any;
+}
 export default class DialogCardList extends Block {
-    constructor(props) {
+    constructor(props: Props) {
         super({
             ...props,
             status: '',

@@ -1,13 +1,13 @@
 .chat-item__avatar {
-    grid-area: avatar;
+	grid-area: avatar;
 
-    &_margin-left {
-        margin-left: 10px;
-    }
+	&_margin-left {
+		margin-left: 10px;
+	}
 
-    &_margin-right {
-        margin-right: 10px;
-    }
+	&_margin-right {
+		margin-right: 10px;
+	}
 
 	img {
 		width: 50px;
@@ -18,12 +18,12 @@
 }
 
 .profile-avatar {
-    text-align: center;
+	text-align: center;
 
-    img {
-        width: 150px;
-        border-radius: 50%;
-        height: 150px;
-        object-fit: cover;
-    }
+	img {
+		width: 150px;
+		border-radius: 50%;
+		height: 150px;
+		object-fit: cover;
+	}
 }

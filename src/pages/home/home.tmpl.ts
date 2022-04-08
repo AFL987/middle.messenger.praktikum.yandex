@@ -6,17 +6,11 @@ export default `
             .app-bar             
                 .app-bar__log-out
                  #logout
-                 #linkProf   
-            #searchForm
-            #addChat
-            nav
+                 #linkProf  
+            #addChat 
             #dialogCardList
-            ul.chat-list
-                #dialogCard1
-                #dialogCard2
-                #dialogCard3
-                #dialogCard4             
     main.content
+        #appChat
         .msg
             #historyMessagesList
         footer.footer

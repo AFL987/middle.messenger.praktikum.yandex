@@ -1,7 +1,5 @@
-import {validation} from './validation';
-
-export const getFormData = (form, page) => {
-    let result = {};
+export const getFormData = (form: HTMLFormElement | any) => {
+    const result: Record<string, string> = {};
     if (!form) result;
     const elem = form.elements;
     for (let i = 0; i < elem.length; i++) {
@@ -15,40 +13,43 @@ export const getFormData = (form, page) => {
             default:
                 result[elem[i].name] = elem[i].value;
         }
-    };
+    }
     return result;
 };
 
-export const verificationSubmitValues = (form, page) => {
-    const values: Record<string, string> = getFormData(form, page);
+export const verificationSubmitValues = (form: HTMLFormElement, page: string) => {
+    const values: Record<string, string> = getFormData(form);
+    // let resultValid = validValuesInput(values);
     switch (page) {
         case 'home':
             break;
         case 'pagePasswordChange':
-            return {...values}
+            // const error = checkEqualityPasswords(values.password, values.passwordRepeat);
+            return {...values};
             break;
         case 'profileSetting':
-            return {...values}
+            return {...values};
             break;
         case 'pageSignUp':
-            return {...values}
+            // const error = checkEqualityPasswords(values.password, values.passwordRepeat);
+            return {...values};
             break;
         case 'pageSignIn':
-            return {...values}
+            return {...values};
             break;
         default:
     }
 }
-export const checkEqualityPasswords = (password, passwordRepeat) => {
+export const checkEqualityPasswords = (password: string, passwordRepeat: string) => {
     if (password && passwordRepeat) {
-        return password !== passwordRepeat ? 'Пароли не совпадают!' : '';
+        return password !== passwordRepeat ? 'Пароли не совпадают' : '';
     }
-}
+};
 
-// const validValuesInput = (values) {
-//     let result = {};
-//     Object.keys(values).forEach(key => {
-//         result[key] = validation(values[key], key)
-//     })
-//     return result;
-// }
+//const validValuesInput = (values: Record<string, string>) => {
+//    const result: Record<string, string | unknown> = {};
+//    Object.keys(values).forEach((key: string) => {
+//        result[key] = validation(values[key], key);
+//    });
+//    return result;
+//};

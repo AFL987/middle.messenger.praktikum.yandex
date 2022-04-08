@@ -7,6 +7,7 @@ const host = 'https://ya-praktikum.tech/api/v2/user';
 const userApi = new HTTPTransport(host);
 
 class UserApi {
+    // private userInfo: XMLHttpRequest | string | null = null;
 
     changeUserProfile(data: userRequest) {
         const dataFormSnakel = camelToSnake(data);

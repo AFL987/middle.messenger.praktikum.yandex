@@ -1,0 +1,67 @@
+.app-chat {
+	flex: 0 0 auto;
+	display: flex;
+	background-color: #fff;
+	margin: 20px;
+	align-items: stretch;
+	justify-content: flex-end;
+	border-radius: 10px;
+	min-height: 0;
+	padding: 5px 15px;
+
+	&__delete-chat {
+		padding: 5px 10px;
+		cursor: pointer;
+	}
+
+	&__add-user {
+		padding: 5px 10px;
+		cursor: pointer;
+	}
+
+	&__delete-user {
+		padding: 5px 10px;
+		cursor: pointer;
+	}
+
+	&__form-add-user {
+		display: flex;
+	}
+
+	&__input {
+		border: 0;
+		padding: 0px 10px;
+		outline: none;
+		background-color: #EFEFEF;
+	}
+
+	.app-chat__delete-chat, .app-chat__add-user, .app-chat__delete-user {
+		background-color: #3369F3;
+	}
+	.app-chat__add-user {
+		border-radius: 10px 0 0 10px;
+	}
+	.visible + .app-chat__add-user {
+		border-radius: 0;
+	}
+	.app-chat__form-add-user input {
+		border-radius: 10px 0 0 10px;
+	}
+	.app-chat__delete-chat{
+		border-radius: 0 10px 10px 0;
+	}
+
+	.icon-add-user {
+		padding: 0px 5px;
+		cursor: pointer;
+		background-color: #edeef0;
+	}
+
+	.visible {
+		display: flex;
+	}
+
+	.hidden {
+		display: none;
+	}
+}

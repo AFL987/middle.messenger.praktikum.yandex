@@ -3,8 +3,9 @@ import Block from '../../utils/block';
 import Avatar from '../avatar';
 import template from './dialogCard.tmpl';
 
-type Props = {
-    id: number,
+type Propsss = {
+    attribute?: Record<string, string>;
+    //id: number,
     srcImg: string;
     active: boolean;
     name: string;
@@ -13,10 +14,11 @@ type Props = {
     status: string;
     notifications: string;
 }
+// attribute: {'data-index': el.id},
 
 export default class DialogCard extends Block {
-    constructor(props: Props) {
-        const {srcImg, active} = props;
+    constructor(props: Propsss) {
+        const {srcImg} = props;
         const avatar = new Avatar({srcImg});
         super({tagName: 'li', children: {avatar}, ...props});
     }

@@ -1,12 +1,17 @@
 {
 "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
+    "target": "es5",    
     "declaration": false,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "noEmitOnError": false,
     },
-    "exclude": ["node_modules"]
+
+"include": ["types/svg/index.d.ts", "types/jpg/index.d.ts"],
+"exclude": ["node_modules"],
 } 

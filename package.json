@@ -9,6 +9,7 @@
     "build": "webpack --mode production",
     "start": "webpack --mode production && node ./server.js ",
     "test": "mocha",
+		"prepare": "husky install",
     "precommit": "lint-staged"
   },
   "simple-git-hooks": {
@@ -64,8 +65,5 @@
     "webpack": "5.72.0",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "3.11.2"
-  },
-  "dependencies": {
-    "simple-git-hooks": "^2.7.0"
   }
 }

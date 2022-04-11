@@ -19,12 +19,10 @@ module.exports = {
             process: 'process/browser',
         },
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        historyApiFallback: true,
-        compress: true,
-        port: 3000,
-    },
+	devServer: {
+		port: 3000,
+		hot: false
+	},
     module: {
         rules: [
             {

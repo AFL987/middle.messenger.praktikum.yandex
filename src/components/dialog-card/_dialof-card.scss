@@ -1,7 +1,7 @@
 .chat-item {
 	padding: 10px;
 	border-radius: 10px;
-	font-family: 'InterMedium', sans-serif;
+	font-family: 'InterMedium';
 	color: rgba(0, 0, 0, 0.9);
 	display: grid;
 	grid-template-columns: 1fr 3fr 0.3fr;
@@ -16,7 +16,7 @@
 	}
 
 	&_is-active {
-		box-shadow: -5px -2px 12px 0 #fff, 5px 7px 25px 0 rgb(0 0 0 / 10%);
+		box-shadow: -5px -2px 12px 0 #fff, 5px 7px 25px 0 rgba(0, 0, 0, 0.1);
 		position: sticky;
 		top: 98px;
 		background-color: #f0f3f6;
@@ -27,7 +27,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		font-family: 'InterMedium', sans-serif;
+		font-family: 'InterMedium';
 		font-size: 1.1rem;
 	}
 

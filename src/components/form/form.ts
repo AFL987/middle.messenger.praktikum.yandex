@@ -4,21 +4,19 @@ import {verificationSubmitValues} from '../../utils/verificationSubmitValues';
 import AuthApi from '../../api/authApi';
 import UserApi from '../../api/userApi';
 import router from '../../index';
-
-type Events = {
-    [key: string]: {tagEvent: string, callback: ((...args) => unknown)}
-}
+import {SignUpRequest, userRequest, changePasswordRequest} from '../../api/types';
+import {Events} from '../../utils/types';
 
 type Props = {
-    children?: {[key: string]: HTMLElement},
+    children?: Record<string, any>;
     className?: string;
     events?: Events;
-    page?: string;
-    template?: string;
+    page: string;
+    template: string;
+    getUserInfo?: () => void;
 }
 
 export default class Form extends Block {
-    props: Props;
     constructor(props: Props) {
         const events: Events = {
             submit: {
@@ -36,78 +34,76 @@ export default class Form extends Block {
         });
     }
 
-    submit(e) {
+    submit(event: Event) {
         const {page} = this.props;
-        const result = this.validValues(e.target, page);
+        const element = event.target as HTMLFormElement;
+        const result = this.validValues(element, page);
         switch (page) {
             case 'pageSignIn':
-                this.isAuthUserIn(result);
+                this.isAuthUserIn(result as SignUpRequest);
                 break;
             case 'pageSignUp':
-                this.isAuthUserUp(result);
+                this.isAuthUserUp(result as SignUpRequest);
                 break;
             case 'pagePasswordChange':
-                this.isChangePassword(result)
+                this.isChangePassword(result as changePasswordRequest);
                 break;
             case 'profileSetting':
-                this.isChangeUserProfile(result);
+                this.isChangeUserProfile(result as userRequest);
                 break;
             default:
                 break;
         }
     };
 
-    isAuthUserUp(value): void {
+    isAuthUserUp(value: SignUpRequest): void {
         new AuthApi().signUp(value)
             .then((data) => {
                 const userInfo = JSON.parse(data.response);
-								router.go('/chats');
-								console.log(userInfo);
+                router.go('/chats');
+                console.log(userInfo);
             }).catch((err) => {
                 console.error(err);
             });
     }
-    isAuthUserIn(value): void {
+    isAuthUserIn(value: Record<string, string>): void {
         new AuthApi().signIn(value)
-            .then((data) => {
+            .then(() => {
                 router.go('/chats');
             })
             .then(() => {
                 new AuthApi().getUserInfo()
                     .then((result) => {
                         const userInfo = JSON.parse(result.response);
-												console.log(userInfo);
+                        console.log(userInfo);
                     });
-            }).catch((err) => {
-                console.error(err);
-            });
+            })
     }
 
-    isChangeUserProfile(data): void {
+    isChangeUserProfile(data: userRequest): void {
         new UserApi().changeUserProfile(data)
-            .then((data) => {
-                this.props.getUserInfo();
+            .then(() => {
+                this.props?.getUserInfo();
                 router.go('/chats');
             }).catch((err) => {
                 console.error(err);
             });
     }
-    isChangePassword(data): void {
+    isChangePassword(data: changePasswordRequest): void {
         delete data.passwordRepeat;
         new UserApi().changeUserPassword(data)
-            .then((data) => {
+            .then(() => {
                 router.go('/chats');
             }).catch((err) => {
                 console.error(err);
             });
     }
-    validValues(e: Event, pageName: string | unknown): {[x: string]: string} | undefined {
+    validValues(e: HTMLFormElement, pageName: string) {
         const result = verificationSubmitValues(e, pageName);
         return result;
     }
 
     render(): string {
-        const {template} = this.props;
-        return render(template);
+        return render(this.props.template);
     }
 }

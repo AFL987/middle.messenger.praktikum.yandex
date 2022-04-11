@@ -8,8 +8,8 @@
 @import "./components/link/link";
 @import "./components/text-link/text-link";
 @import "./components/title-auth/title-auth";
-@import "./components/appBar/app-bar";
 @import "./components/iconLink/iconLink";
+@import "./components/appChat/appChat";
 @import "./components/formInputIcon/formInputIcon";
 @import "./components/back-panel/backPanel";
 @import "./components/navigation-panel/navigationPanel";
@@ -101,15 +101,6 @@ a:active{
 	}
 }
 
-
-
-.status-message {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	margin: 0 auto;
-}
-
 .is-sent {
 	background-color: #EC732E;
 }
@@ -195,64 +186,9 @@ ul {
 	}
 }
 
-.status-message {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	margin: 0 auto;
-}
-
-.is-sent {
-	background-color: #EC732E;
-}
-
-.is-received {
-	background-color: #ECC22E;
-}
-
-.is-read {
-	background-color: #82EC2E;
-}
-
 .error {
 	font-family: 'InterMedium', sans-serif;
 	color: #FF2F2F;
 	font-size: 9px;
 	padding-top: 5px;
-}
-
-
-.error-page {
-	margin: 0 auto;
-	text-align: center;
-	font-family: 'InterMedium', sans-serif;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-
-	&__title {
-		font-size: 9rem;
-	}
-
-	&__content {
-		font-size: 2.5rem;
-		margin: 20px 50px;
-	}
-}
-
-.start {
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	a {
-		font-size: 2rem;
-	}
-}
-
-#label {
-	align-self: center;
 }

@@ -1,9 +1,7 @@
-import svg from '../../../static/img/*.svg';
+import svg from '../../../static/img/arrou_blue.svg';
 export default `
-.input-form__media-attach
-    img(src="${svg.clip}")
 .input-form__message
     input(type="text" placeholder="Сообщение")
 .input-form__send-message
-    img(src="${svg.arrou_blue}")
+    img(src="${svg}")
 `;

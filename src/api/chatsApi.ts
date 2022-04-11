@@ -4,6 +4,7 @@ const host = 'https://ya-praktikum.tech/api/v2/chats';
 const chatsApi = new HTTPTransport(host);
 
 class ChatsApi {
+    // private userInfo: XMLHttpRequest | string | null = null;
 
     getChats() {
         const options = {

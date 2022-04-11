@@ -1,6 +1,5 @@
 import Block from '../../utils/block';
 import {render} from 'pug';
-import {PropsPage} from '../../utils/types';
 import Button from '../../components/button';
 import Input from '../../components/input';
 import template from './signUp.tmpl';
@@ -20,11 +19,12 @@ form
         #button
     .error
 `;
-
+export type Indexed<T = unknown> = {
+    [key: string]: T;
+};
 
 export default class PageSignUp extends Block {
-    constructor(props: PropsPage) {
-        const _template = template;
+    constructor() {
         document.title = 'pageSignUp';
 
         const _form = new Form({
@@ -95,7 +95,6 @@ export default class PageSignUp extends Block {
         });
 
         super({
-            template: _template,
             children: {
 								navigationPanel: new NavigationPanel(),
                 form: _form,
@@ -104,7 +103,6 @@ export default class PageSignUp extends Block {
     }
 
     render(): string {
-        const {template} = this.props;
         return render(template);
     }
 }
